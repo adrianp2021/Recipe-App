@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { DotLoader } from "react-spinners";
+import { Card, Image } from "semantic-ui-react";
 
 const RandomMeals = () => {
   const [meal, setMeal] = useState(undefined);
@@ -48,14 +50,27 @@ const RandomMeals = () => {
   } = meal;
 
   return (
-    <div>
-      <div>{strMeal}</div>
-      <img src={strMealThumb} alt="" />
-      <div>Complimentary drink {strDrinkAlternate}</div>
+    <main>
+              <div>
+          <p className="recipe-of-the-day">Recipe of the day</p>
+        </div>
+
+
+      <Card id="card">
+
+        <Image src={strMealThumb} alt="" id="image" ui={false} />
+
+        <Card.Content>
+          <Card.Header id="meal-name">{strMeal}</Card.Header>
+        </Card.Content>
+
+      </Card>
+
+      {/* <div>Complimentary drink {strDrinkAlternate}</div>
       <div>{strCategory}</div>
-      <div>{strInstructions}</div>
-      <div>{strYoutube}</div>
-      <div>
+      <div>{strInstructions}</div> */}
+      {/* <div>{strYoutube}</div> */}
+      {/* <div>
         <div>{strIngredient1}</div>
         <div>{strIngredient2}</div>
         <div>{strIngredient3}</div>
@@ -76,8 +91,8 @@ const RandomMeals = () => {
         <div>{strIngredient18}</div>
         <div>{strIngredient19}</div>
         <div>{strIngredient20}</div>
-      </div>
-    </div>
+      </div> */}
+    </main>
   );
 };
 

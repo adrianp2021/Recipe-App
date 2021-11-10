@@ -1,0 +1,54 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+main{
+  background-color: aliceblue;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media only all and (max-width: 600px) {
+  main{
+    height: 100vh;
+  }
+.ui.card{
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  width: 100%;
+  margin: 12px;
+}
+#image{
+  width: 100%;
+  height: 60%;
+}
+#meal-name{
+  font-weight: bolder;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  font-weight: 590;
+  color: rgb(39, 94, 89);
+  height: 35px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background: white;
+}
+.recipe-of-the-day{
+  position: absolute;
+  top:10rem;
+  left: 17px;
+  z-index: 20;
+  background-color: white;
+  padding: 0.25rem 1rem;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  color:grey;
+  padding: 10px;
+}
+}
