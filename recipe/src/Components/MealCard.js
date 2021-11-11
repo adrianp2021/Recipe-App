@@ -2,7 +2,6 @@ import React from "react";
 
 const MealCard = ({ strCategory, strCategoryThumb }) => {
   
-  // const { } = categories;
   return (
     <div>
       <img src={strCategoryThumb} alt="" className="category-image" />

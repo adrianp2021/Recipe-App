@@ -15,6 +15,7 @@ main {
   main {
     height: 100vh;
   }
+
   .ui.card {
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     width: 90%;
@@ -31,9 +32,19 @@ main {
     background: white;
     font-weight: bolder;
   }
+  #image {
+    -webkit-mask-image: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(rgba(0, 0, 0, 1)),
+      to(rgba(0, 0, 0, 0))
+    );
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  }
   .recipe-of-the-day {
     position: absolute;
-    bottom: 4rem;
+    // bottom: 10rem;
     z-index: 20;
     background-color: rgb(255, 255, 255);
     padding: 0.25rem 1rem;
@@ -81,5 +92,35 @@ main {
     text-align: center;
     margin: 15px;
     color: rgb(39, 94, 89);
+  }
+
+  // modal
+  #modal-category-name {
+    color: rgb(39, 94, 89);
+  }
+  #modal-meal-name h3 {
+    width: 220px;
+    border: 0.2px solid #325d79;
+    border-left-style: none;
+    border-right-style: none;
+    font-size: 12.5px;
+    color: #325d79;
+    transform: scaleY(1.5);
+    text-transform: uppercase;
+    font-weight: 800;
+    text-align: center;
+    padding: 2px;
+  }
+  #modal-meal-description {
+    font-size: 14px;
+    font-weight: 300;
+    color: rgb(128, 125, 125);
+  }
+  #modal-meal-button {
+    background: #9bd7d1;
+    color: white;
+    font-size: 13px;
+    font-weight: 400;
+    font-family: "Karla", sans-serif;
   }
 }
