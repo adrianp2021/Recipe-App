@@ -44,15 +44,17 @@ main {
   }
   .recipe-of-the-day {
     position: absolute;
-    // bottom: 10rem;
+    bottom: 12rem;
+    // left: 40px;
     z-index: 20;
     background-color: rgb(255, 255, 255);
     padding: 0.25rem 1rem;
     border-top-right-radius: 4px;
     border-bottom-right-radius: 4px;
+    border-radius: 4px;
     color: grey;
-    padding: 8px;
-    font-size: 14px;
+    padding: 4px;
+    font-size: 12px;
     font-family: "Poppins", sans-serif;
   }
   #category-section {
@@ -94,33 +96,92 @@ main {
     color: rgb(39, 94, 89);
   }
 
-  // modal
+  // MODAL
   #modal-category-name {
     color: rgb(39, 94, 89);
+    font-size: 16px;
   }
+  #modal-category-name-style {
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+  }
+
   #modal-meal-name h3 {
-    width: 220px;
+    width: 100%;
     border: 0.2px solid #325d79;
     border-left-style: none;
     border-right-style: none;
     font-size: 12.5px;
     color: #325d79;
-    transform: scaleY(1.5);
     text-transform: uppercase;
     font-weight: 800;
     text-align: center;
-    padding: 2px;
   }
   #modal-meal-description {
     font-size: 14px;
     font-weight: 300;
-    color: rgb(128, 125, 125);
+    color: #262727;
+    margin: 12px;
+  }
+  #modal-meal-button-div {
+    display: flex;
+    justify-content: flex-end;
   }
   #modal-meal-button {
-    background: #9bd7d1;
+    width: 30%;
+    background: #325d79;
     color: white;
     font-size: 13px;
     font-weight: 400;
-    font-family: "Karla", sans-serif;
+    margin: 10px;
+  }
+  #modal-meal-image img {
+    width: 100% !important;
+    border-radius: 4px;
+  }
+
+  #modal-meal-area {
+    width: 100%;
+    height: 55px;
+    margin-top: 10px;
+    margin-bottom: -10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  #earth,
+  #tag {
+    margin-right: 5px;
+    color: #325d79;
+    font-size: 20px;
+  }
+
+  #modal-meal-area-div {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  #modal-meal-ingredients {
+    font-size: 15px;
+    color: rgb(77, 77, 76);
+  }
+  #modal-meal-ingredients-space {
+    margin-bottom: 5px;
+    font-family: "Karla" sans-serif;
+    font-weight: 100;
+  }
+  #youtube {
+    margin: 10px;
+    display: flex;
+  }
+  #logo-youtube {
+    color: #f7410a;
+    font-size: 20px;
+    margin-left: 4px;
   }
 }

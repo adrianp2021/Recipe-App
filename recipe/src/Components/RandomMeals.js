@@ -10,6 +10,10 @@ import {
   Grid,
 } from "semantic-ui-react";
 
+import { IoLogoYoutube } from "react-icons/io";
+import { GiEarthAfricaEurope } from "react-icons/gi";
+import { AiOutlineTags } from "react-icons/ai";
+
 const RandomMeals = () => {
   const [meal, setMeal] = useState(undefined);
   const [open, setOpen] = React.useState(false);
@@ -34,6 +38,8 @@ const RandomMeals = () => {
     strMealThumb,
     strCategory,
     strInstructions,
+    strArea,
+    strTags,
     strYoutube,
     strIngredient1,
     strIngredient2,
@@ -76,67 +82,94 @@ const RandomMeals = () => {
           open={open}
           trigger={<Button>See how it's done</Button>}
         >
-          <Modal.Header>
+          <div id="modal-category-name-style">
             <h2 id="modal-category-name">{strCategory}</h2>
-          </Modal.Header>
+          </div>
+
+          {/* <Divider /> */}
 
           <Container>
             <Modal.Content image>
-              <Image size="medium" src={strMealThumb} wrapped />
+              <Image
+                size="medium"
+                src={strMealThumb}
+                wrapped
+                id="modal-meal-image"
+              />
             </Modal.Content>
 
+            <Modal.Header id="modal-meal-name">
+              <h3>{strMeal}</h3>
+            </Modal.Header>
+
+            <Modal.Header id="modal-meal-area">
+              <div id="modal-meal-area-div">
+                <AiOutlineTags id="tag" />
+                {strTags}
+              </div>
+              <div id="modal-meal-area-div">
+                <GiEarthAfricaEurope id="earth" />
+                {strArea}
+              </div>
+            </Modal.Header>
+
+            <h3>Ingredients</h3>
             <Grid divided="vertically">
-              <Grid.Row columns={2}>
-                <Grid.Column>
-                  <div>{strIngredient1}</div>
-                  <div>{strIngredient2}</div>
-                  <div>{strIngredient3}</div>
-                  <div>{strIngredient4}</div>
-                  <div>{strIngredient5}</div>
-                  <div>{strIngredient6}</div>
-                  <div>{strIngredient7}</div>
-                  <div>{strIngredient8}</div>
-                  <div>{strIngredient9}</div>
-                  <div>{strIngredient10}</div>
+              <Grid.Row columns={3}>
+                <Grid.Column id="modal-meal-ingredients">
+                  <div id="modal-meal-ingredients-space">{strIngredient1}</div>
+                  <div id="modal-meal-ingredients-space">{strIngredient2}</div>
+                  <div id="modal-meal-ingredients-space">{strIngredient3}</div>
+                  <div id="modal-meal-ingredients-space">{strIngredient4}</div>
+                  <div id="modal-meal-ingredients-space">{strIngredient5}</div>
+                  <div id="modal-meal-ingredients-space">{strIngredient6}</div>
+                  <div id="modal-meal-ingredients-space">{strIngredient7}</div>
                 </Grid.Column>
-                <Grid.Column>
-                  <div>{strIngredient11}</div>
-                  <div>{strIngredient12}</div>
-                  <div>{strIngredient13}</div>
-                  <div>{strIngredient14}</div>
-                  <div>{strIngredient15}</div>
-                  <div>{strIngredient16}</div>
-                  <div>{strIngredient17}</div>
-                  <div>{strIngredient18}</div>
-                  <div>{strIngredient19}</div>
-                  <div>{strIngredient20}</div>
+
+                <Grid.Column id="modal-meal-ingredients">
+                  <div id="modal-meal-ingredients-space">{strIngredient8}</div>
+                  <div id="modal-meal-ingredients-space">{strIngredient9}</div>
+                  <div id="modal-meal-ingredients-space">{strIngredient10}</div>
+                  <div id="modal-meal-ingredients-space">{strIngredient11}</div>
+                  <div id="modal-meal-ingredients-space">{strIngredient12}</div>
+                  <div id="modal-meal-ingredients-space">{strIngredient13}</div>
+                  <div id="modal-meal-ingredients-space">{strIngredient14}</div>
+                </Grid.Column>
+
+                <Grid.Column id="modal-meal-ingredients">
+                  <div id="modal-meal-ingredients-space">{strIngredient15}</div>
+                  <div id="modal-meal-ingredients-space">{strIngredient16}</div>
+                  <div id="modal-meal-ingredients-space">{strIngredient17}</div>
+                  <div id="modal-meal-ingredients-space">{strIngredient18}</div>
+                  <div id="modal-meal-ingredients-space">{strIngredient19}</div>
+                  <div id="modal-meal-ingredients-space">{strIngredient20}</div>
                 </Grid.Column>
               </Grid.Row>
             </Grid>
           </Container>
 
-          <Modal.Header id="modal-meal-name">
-            <h3 className="posh">{strMeal}</h3>
-          </Modal.Header>
-
           <Modal.Description>
             <h5 id="modal-meal-description">{strInstructions}</h5>
           </Modal.Description>
 
-          <Modal.Description>
-            <a href={strYoutube} target="_blank" rel="noreferrer">
-              See video
+          <Modal.Description id="youtube">
+            <h4>Click to watch now</h4>
+            <a
+              href={strYoutube}
+              target="_blank"
+              id="logo-youtube"
+              rel="noreferrer"
+            >
+              <IoLogoYoutube />
             </a>
           </Modal.Description>
-
-          <Button onClick={() => setOpen(false)} id="modal-meal-button">
-            Close
-          </Button>
+          <div id="modal-meal-button-div">
+            <Button onClick={() => setOpen(false)} id="modal-meal-button">
+              Close
+            </Button>
+          </div>
         </Modal>
       </Card>
-      {/* <h3>see recipe */}
-
-      {/* <div>{strCategory}</div> */}
     </main>
   );
 };
