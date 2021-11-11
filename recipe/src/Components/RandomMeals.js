@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { DotLoader } from "react-spinners";
+// import { DotLoader } from "react-spinners";
 import { Card, Image } from "semantic-ui-react";
 
 const RandomMeals = () => {
@@ -10,9 +10,9 @@ const RandomMeals = () => {
   useEffect(() => {
     async function retrieveMeal() {
       const res = await fetch(apiURL);
-      console.log("what is res ->", res);
+      // console.log("what is res ->", res);
       const data = await res.json();
-      console.log("what is data ->", data);
+      // console.log("what is data ->", data);
       setMeal(data.meals[0]);
     }
     retrieveMeal();
