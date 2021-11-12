@@ -61,6 +61,26 @@ const RandomMeals = () => {
     strIngredient18,
     strIngredient19,
     strIngredient20,
+    strMeasure1,
+    strMeasure2,
+    strMeasure3,
+    strMeasure4,
+    strMeasure5,
+    strMeasure6,
+    strMeasure7,
+    strMeasure8,
+    strMeasure9,
+    strMeasure10,
+    strMeasure11,
+    strMeasure12,
+    strMeasure13,
+    strMeasure14,
+    strMeasure15,
+    strMeasure16,
+    strMeasure17,
+    strMeasure18,
+    strMeasure19,
+    strMeasure20,
   } = meal;
 
   return (
@@ -80,7 +100,9 @@ const RandomMeals = () => {
           onClose={() => setOpen(false)}
           onOpen={() => setOpen(true)}
           open={open}
-          trigger={<Button>See how it's done</Button>}
+          trigger={
+            <Button onClick={() => setOpen(false)}>See how it's done</Button>
+          }
         >
           <div id="modal-category-name-style">
             <h2 id="modal-category-name">{strCategory}</h2>
@@ -117,32 +139,32 @@ const RandomMeals = () => {
             <Grid divided="vertically">
               <Grid.Row columns={3}>
                 <Grid.Column id="modal-meal-ingredients">
-                  <div id="modal-meal-ingredients-space">{strIngredient1}</div>
-                  <div id="modal-meal-ingredients-space">{strIngredient2}</div>
-                  <div id="modal-meal-ingredients-space">{strIngredient3}</div>
-                  <div id="modal-meal-ingredients-space">{strIngredient4}</div>
-                  <div id="modal-meal-ingredients-space">{strIngredient5}</div>
-                  <div id="modal-meal-ingredients-space">{strIngredient6}</div>
-                  <div id="modal-meal-ingredients-space">{strIngredient7}</div>
+                  <div id="modal-meal-ingredients-space">{strMeasure1} {strIngredient1}</div>
+                  <div id="modal-meal-ingredients-space">{strMeasure2} {strIngredient2}</div>
+                  <div id="modal-meal-ingredients-space">{strMeasure3} {strIngredient3}</div>
+                  <div id="modal-meal-ingredients-space">{strMeasure4} {strIngredient4}</div>
+                  <div id="modal-meal-ingredients-space">{strMeasure5} {strIngredient5}</div>
+                  <div id="modal-meal-ingredients-space">{strMeasure6} {strIngredient6}</div>
+                  <div id="modal-meal-ingredients-space">{strMeasure7} {strIngredient7}</div>
                 </Grid.Column>
 
                 <Grid.Column id="modal-meal-ingredients">
-                  <div id="modal-meal-ingredients-space">{strIngredient8}</div>
-                  <div id="modal-meal-ingredients-space">{strIngredient9}</div>
-                  <div id="modal-meal-ingredients-space">{strIngredient10}</div>
-                  <div id="modal-meal-ingredients-space">{strIngredient11}</div>
-                  <div id="modal-meal-ingredients-space">{strIngredient12}</div>
-                  <div id="modal-meal-ingredients-space">{strIngredient13}</div>
-                  <div id="modal-meal-ingredients-space">{strIngredient14}</div>
+                  <div id="modal-meal-ingredients-space">{strMeasure8} {strIngredient8}</div>
+                  <div id="modal-meal-ingredients-space">{strMeasure9} {strIngredient9}</div>
+                  <div id="modal-meal-ingredients-space">{strMeasure10} {strIngredient10}</div>
+                  <div id="modal-meal-ingredients-space">{strMeasure11} {strIngredient11}</div>
+                  <div id="modal-meal-ingredients-space">{strMeasure12} {strIngredient12}</div>
+                  <div id="modal-meal-ingredients-space">{strMeasure13} {strIngredient13}</div>
+                  <div id="modal-meal-ingredients-space">{strMeasure14} {strIngredient14}</div>
                 </Grid.Column>
 
                 <Grid.Column id="modal-meal-ingredients">
-                  <div id="modal-meal-ingredients-space">{strIngredient15}</div>
-                  <div id="modal-meal-ingredients-space">{strIngredient16}</div>
-                  <div id="modal-meal-ingredients-space">{strIngredient17}</div>
-                  <div id="modal-meal-ingredients-space">{strIngredient18}</div>
-                  <div id="modal-meal-ingredients-space">{strIngredient19}</div>
-                  <div id="modal-meal-ingredients-space">{strIngredient20}</div>
+                  <div id="modal-meal-ingredients-space">{strMeasure15} {strIngredient15}</div>
+                  <div id="modal-meal-ingredients-space">{strMeasure16} {strIngredient16}</div>
+                  <div id="modal-meal-ingredients-space">{strMeasure17} {strIngredient17}</div>
+                  <div id="modal-meal-ingredients-space">{strMeasure18} {strIngredient18}</div>
+                  <div id="modal-meal-ingredients-space">{strMeasure19} {strIngredient19}</div>
+                  <div id="modal-meal-ingredients-space">{strMeasure20} {strIngredient20}</div>
                 </Grid.Column>
               </Grid.Row>
             </Grid>

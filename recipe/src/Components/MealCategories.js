@@ -19,6 +19,8 @@ const MealCategories = () => {
     retrieveCategory();
   }, []);
 
+  
+
   if (!categories) return null;
 
   return (
