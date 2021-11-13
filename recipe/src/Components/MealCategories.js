@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 // import { Item } from "semantic-ui-react";
-import MealCard from "./MealCard";
+// import MealCard from "./MealCard";
 
 const MealCategories = () => {
   const [categories, setCategories] = useState(undefined);
@@ -14,7 +14,7 @@ const MealCategories = () => {
       const data = await res.json();
       // console.log("what is data (categories) ->", data);
       setCategories(data.categories);
-      // console.log("data.categories -> ", data.categories);
+      console.log("data.categories -> ", data.categories);
     }
     retrieveCategory();
   }, []);

@@ -1,6 +1,9 @@
 import React from "react";
 // import { motion } from "framer-motion";
 
+
+// REQUIRES FURTHER WORK
+
 const NavLinks = (props) => {
   const container = {
     hidden: { opacity: 1, scale: 0 },
@@ -15,37 +18,30 @@ const NavLinks = (props) => {
   };
 
   return (
-    <ul
-      className="container"
-      variants={container}
-    >
-      <li onClick={() => {
+    <ul className="container" variants={container}>
+      <li
+        onClick={() => {
           props.isMobile && props.closeMobileMenu();
         }}
-      >
-        {/* <a href="#about-container">About</a> */}
-      </li>
+      ></li>
 
-      <li onClick={() => {
+      <li
+        onClick={() => {
           props.isMobile && props.closeMobileMenu();
         }}
-      >
-        {/* <a href="#experience-container">Experience</a> */}
-      </li>
+      ></li>
 
-      <li onClick={() => {
+      <li
+        onClick={() => {
           props.isMobile && props.closeMobileMenu();
         }}
-      >
-        {/* <a href="#project-container">Projects</a> */}
-      </li>
+      ></li>
 
-      <li onClick={() => {
+      <li
+        onClick={() => {
           props.isMobile && props.closeMobileMenu();
         }}
-      >
-        {/* <a href="#contact-container">Contact</a> */}
-      </li>
+      ></li>
     </ul>
   );
 };

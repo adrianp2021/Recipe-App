@@ -10,9 +10,7 @@ function App() {
     <div className="App">
       <Navbar />
       <MealCategories />
-
       <SearchBar />
-
       <RandomMeals />
     </div>
   );
