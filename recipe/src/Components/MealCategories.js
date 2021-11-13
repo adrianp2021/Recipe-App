@@ -14,7 +14,7 @@ const MealCategories = () => {
       const data = await res.json();
       // console.log("what is data (categories) ->", data);
       setCategories(data.categories);
-      console.log("data.categories[0] -> ", data.categories);
+      // console.log("data.categories -> ", data.categories);
     }
     retrieveCategory();
   }, []);

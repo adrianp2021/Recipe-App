@@ -1,14 +1,50 @@
-import React from "react";
+import React, { useState } from "react";
+
+import { ScaleLoader } from "react-spinners";
+
 import { Input, Icon } from "semantic-ui-react";
-// import {AiOutlineSearch} from 'react-icons/ai'
 
 const SearchBar = () => {
+  // const [loading, setLoading] = useState(false);
+  const [query, setQuery] = useState("");
+  const [meal, setMeal] = useState({});
+  const [hasError, setHasError] = useState(false);
+
+  const searchMeal = (event) => {
+    if (event.key === "Enter") {
+      fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`)
+        .then((res) => res.json())
+        .then((result) => {
+          setMeal(result);
+          setQuery("");
+          console.log("what is the result ->", result);
+          setHasError(true);
+        });
+    }
+  };
+
   return (
     <section className="input">
-        <Input icon placeholder="Search your favourite recipes..." className="input-search-bar">
+      {meal ? (
+        <Input
+          icon
+          type="text"
+          placeholder="Search recipes..."
+          className="input-search-bar"
+          onChange={(e) => {
+            setQuery(e.target.value);
+          }}
+          value={query}
+          onKeyPress={searchMeal}
+        >
           <input />
-          <Icon name="search" className="search-icon"/>
+          <Icon name="search" className="search-icon" />
         </Input>
+      ) : (
+        <h2 className="title has-text-centered">
+          {hasError ? "Oops, something went wrong!" : <ScaleLoader />}
+        </h2>
+      )}
     </section>
   );
 };

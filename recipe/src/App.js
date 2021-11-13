@@ -1,20 +1,19 @@
-import '../src/App.scss'
+import "../src/App.scss";
 
 import RandomMeals from "./Components/RandomMeals";
-import MealCategories from './Components/MealCategories';
-import Navbar from './Components/Navbar';
-import SearchBar from './Components/SearchBar';
+import MealCategories from "./Components/MealCategories";
+import Navbar from "./Components/Navbar";
+import SearchBar from "./Components/SearchBar";
 
 function App() {
   return (
     <div className="App">
-    <Navbar />
-    <MealCategories />
+      <Navbar />
+      <MealCategories />
 
-<SearchBar />
+      <SearchBar />
 
-    
-    <RandomMeals />
+      <RandomMeals />
     </div>
   );
 }
