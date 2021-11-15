@@ -1,7 +1,7 @@
 // import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import PuffLoader from 'react-spinners/PuffLoader'
+import PuffLoader from "react-spinners/PuffLoader";
 
 // import { ScaleLoader } from "react-spinners";
 
@@ -14,7 +14,7 @@ const SearchBar = () => {
   const [meal, setMeal] = useState([]);
   const [hasError, setHasError] = useState(false);
 
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(true);
 
   const searchMeal = (event) => {
     if (event.key === "Enter") {
@@ -30,8 +30,8 @@ const SearchBar = () => {
   };
 
   useEffect(() => {
-    setLoading(true)
-  }, [])
+    setLoading(true);
+  }, []);
 
   return (
     <section className="input">
@@ -51,49 +51,15 @@ const SearchBar = () => {
           <Icon name="search" className="search-icon" />
         </Input>
 
-        {/* <Link to="recipe-page">
-          <div className="meal-search-container">
-            {meal.map((recipe) => {
-              return (
-                <Link to="search-meal">
-                  <Container>
-                    {meal.length > 0 ? (
-                      <RecipePage key={recipe.idMeal}  {...recipe}/>
-                        <p>{recipe.strCategory}</p>
-                        <p>{recipe.strMeal}</p>
-                        <img src={recipe.strMealThumb} alt="" />
-                      </div>
-                    ) : (
-                      <h2>
-                        {hasError ? "Something has gone wrong" : "loading"}
-                      </h2>
-                    
-                  </Container>
-                </Link>
-              );
-            })}
+        <section className="cocktail-index cocktail-page">
+          <div className="container">
+            <div id="recipe-section">
+              {meal.map((recipe) => {
+                return <RecipePage key={recipe.idDrink} {...recipe} />;
+              })}
+            </div>
           </div>
-        </Link> */}
-
-    <section className="cocktail-index cocktail-page">
-      <div className="container">
-        {/* {meal.length > 0 ? ( */}
-          <div id="recipe-section">
-            {meal.map((recipe) => {
-              return <RecipePage key={recipe.idDrink} {...recipe} />
-            })}
-          </div>
-        {/* ) : ( */}
-          {/* <div id="error">
-            {hasError ? (
-              'Something has gone wrong.'
-            ) : (
-              <PuffLoader size={150} />
-            )}
-          </div> */}
-        {/* )} */}
-      </div>
-    </section>
+        </section>
       </>
     </section>
   );

@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 import DotLoader from "react-spinners/DotLoader";
+import { Button } from "semantic-ui-react";
 
 const CocktailShow = () => {
   const { id } = useParams();
@@ -27,18 +28,17 @@ const CocktailShow = () => {
     getRecipes();
   }, [id]);
 
-
   return (
     <section className="section">
-      <div >
+      <div>
         {meal ? (
           <div>
-            <h2 >{meal.strMeal}</h2>
+            <h2>{meal.strMeal}</h2>
             <hr />
             <div>
               <div>
                 <figure>
-                  <img src={meal.strMealThumb} alt=""/>
+                  <img src={meal.strMealThumb} alt="" />
                 </figure>
               </div>
               <div>
@@ -87,14 +87,13 @@ const CocktailShow = () => {
                 <hr />
               </div>
             </div>
+            <Link to="/" >
+            <Button>Go back</Button>
+            </Link>
           </div>
         ) : (
           <h2 className="title has-text-centered">
-            {hasError ? (
-              "Oops, something went wrong!"
-            ) : (
-              <DotLoader />
-            )}
+            {hasError ? "Oops, something went wrong!" : <DotLoader />}
           </h2>
         )}
       </div>
