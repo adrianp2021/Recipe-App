@@ -3,15 +3,22 @@ import "../src/App.scss";
 import RandomMeals from "./Components/RandomMeals";
 import MealCategories from "./Components/MealCategories";
 import Navbar from "./Components/Navbar";
-import SearchBar from "./Components/SearchBar";
+import MealCard from "./Components/MealCard";
+import Home from "./common/Home";
+import MealShow from './Components/MealShow'
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
       <Navbar />
-      <MealCategories />
-      <SearchBar />
-      <RandomMeals />
+      <Routes>
+        <Route index element={<Home />} />
+        <Route path="meal-categories" element={<MealCategories />} />
+        <Route path="random-meals" element={<RandomMeals />} />
+        <Route path="search-meal" element={<MealCard />} />
+        <Route path="/recipe/:id" element={<MealShow />} />
+      </Routes>
     </div>
   );
 }

@@ -4,6 +4,7 @@ import React, { useState } from "react";
 // import { RiCloseFill } from "react-icons/ri";
 // import { AiOutlineSearch } from "react-icons/ai";
 import logo from "../Assets/logo.png";
+import { Link } from "react-router-dom";
 
 import NavLinks from "./NavLinks";
 
@@ -45,7 +46,9 @@ const Navbar = () => {
       </div>
 
       <div id="flex">
-        <img src={logo} alt="" className="app-logo" />
+        <Link to="/">
+          <img src={logo} alt="" className="app-logo" />
+        </Link>
       </div>
     </nav>
   );

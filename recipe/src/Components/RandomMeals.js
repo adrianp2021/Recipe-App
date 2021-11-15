@@ -86,7 +86,7 @@ const RandomMeals = () => {
   return (
     <main>
       <div>
-        <p className="recipe-of-the-day">Recipe of the day</p>
+        {/* <p className="recipe-of-the-day">Recipe of the day</p> */}
       </div>
 
       <Card id="card">

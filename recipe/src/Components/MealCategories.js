@@ -14,12 +14,10 @@ const MealCategories = () => {
       const data = await res.json();
       // console.log("what is data (categories) ->", data);
       setCategories(data.categories);
-      console.log("data.categories -> ", data.categories);
+      // console.log("data.categories -> ", data.categories);
     }
     retrieveCategory();
   }, []);
-
-  
 
   if (!categories) return null;
 
