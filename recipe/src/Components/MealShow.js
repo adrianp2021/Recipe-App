@@ -2,9 +2,10 @@ import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 import DotLoader from "react-spinners/DotLoader";
-import { Button } from "semantic-ui-react";
+import { Button, Container, Grid, Image } from "semantic-ui-react";
+import { MdOutlineArrowBack } from "react-icons/md";
 
-const CocktailShow = () => {
+const MealShow = () => {
   const { id } = useParams();
   console.log(id);
 
@@ -17,9 +18,9 @@ const CocktailShow = () => {
         const { data } = await axios.get(
           `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`
         );
-        setMeal(data.meals[0]);
+        setMeal(data.meals);
         // console.log("what is setMeal", setMeal);
-        console.log("What is the data on lookup returning", data.meals);
+        console.log("What is the data on lookup returning", data.meals[0]);
       } catch (err) {
         console.log(err);
         setHasError(true);
@@ -33,62 +34,107 @@ const CocktailShow = () => {
       <div>
         {meal ? (
           <div>
-            <h2>{meal.strMeal}</h2>
-            <hr />
-            <div>
-              <div>
-                <figure>
-                  <img src={meal.strMealThumb} alt="" />
-                </figure>
+            {meal.map((item, i) => {
+              return (
+                <div key={i}>
+                  <div>
+                    <Image
+                      src={meal[0].strMealThumb}
+                      alt=""
+                      wrapped
+                      className="recipe-img"
+                    />
+                  </div>
+                  <Link to="/">
+                    <MdOutlineArrowBack className="return-icon" />
+                  </Link>
+
+                  <div className="recipe-container-rounded-border">
+                    <h2>{meal[0].strMeal}</h2>
+                    <p>{meal[0].strCategory}</p>
+                    <p>{meal[0].strArea}</p>
+                    {meal[0].strTags}
+                    <p>{meal[0].strInstructions}</p>
+
+                    <Grid divided="vertically">
+                      <Grid.Row columns={2}>
+                        <Grid.Column>
+                          <div>
+                            {meal[0].strMeasure1} {meal[0].strIngredient1}
+                          </div>
+                          <div>
+                            {meal[0].strMeasure2} {meal[0].strIngredient2}
+                          </div>
+                          <div>
+                            {meal[0].strMeasure3}{" "}
+                            {meal[0].strIngredient3strMeasure3}
+                          </div>
+                          <div>
+                            {meal[0].strMeasure4} {meal[0].strIngredient4}
+                          </div>
+                          <div>
+                            {meal[0].strMeasure5} {meal[0].strIngredient5}
+                          </div>
+                          <div>
+                            {meal[0].strMeasure6} {meal[0].strIngredient6}
+                          </div>
+                          <div>
+                            {meal[0].strMeasure7} {meal[0].strIngredient7}
+                          </div>
+                          <div>
+                            {meal[0].strMeasure8} {meal[0].strIngredient8}
+                          </div>
+                          <div>
+                            {meal[0].strMeasure9} {meal[0].strIngredient9}
+                          </div>
+                          <div>
+                            {meal[0].strMeasure10} {meal[0].strIngredient10}
+                          </div>
+                        </Grid.Column>
+
+                        <Grid.Column>
+                          <div>
+                            {meal[0].strMeasure11} {meal[0].strIngredient11}
+                          </div>
+                          <div>
+                            {meal[0].strMeasure12} {meal[0].strIngredient12}
+                          </div>
+                          <div>
+                            {meal[0].strMeasure13} {meal[0].strIngredient13}
+                          </div>
+                          <div>
+                            {meal[0].strMeasure14} {meal[0].strIngredient14}
+                          </div>
+                          <div>
+                            {meal[0].strMeasure15} {meal[0].strIngredient15}
+                          </div>
+                          <div>
+                            {meal[0].strMeasure16} {meal[0].strIngredient16}
+                          </div>
+                          <div>
+                            {meal[0].strMeasure17} {meal[0].strIngredient17}
+                          </div>
+                          <div>
+                            {meal[0].strMeasure18} {meal[0].strIngredient18}
+                          </div>
+                          <div>
+                            {meal[0].strMeasure19} {meal[0].strIngredient19}
+                          </div>
+                          <div>
+                            {meal[0].strMeasure20} {meal[0].strIngredient20}
+                          </div>
+                        </Grid.Column>
+                      </Grid.Row>
+                    </Grid>
+                  </div>
+                </div>
+              );
+            })}
+
+            <Link to="/">
+              <div id="recipe-button">
+                <Button>Go back</Button>
               </div>
-              <div>
-                <h4>
-                  <span role="img" aria-label="plate">
-                    Category
-                  </span>
-                </h4>
-                <p>{meal.strCategory}</p>
-                <hr />
-                <h4>
-                  <span role="img" aria-label="globe"></span>
-                  Alcoholic/Non-alcoholic
-                </h4>
-                <p>{meal.strArea}</p>
-                <hr />
-                <h4>
-                  <span role="img" aria-label="globe"></span>Glass Type
-                </h4>
-                {meal.strTags}
-                <hr />
-                <h4>Ingredients</h4>
-                <p>
-                  {meal.strMeasure1} {meal.strIngredient1}
-                </p>
-                <p>
-                  {meal.strMeasure2} {meal.strIngredient2}
-                </p>
-                <p>
-                  {meal.strMeasure3} {meal.strIngredient3}
-                </p>
-                <p>
-                  {meal.strMeasure4} {meal.strIngredient4}
-                </p>
-                <p>
-                  {meal.strMeasure5} {meal.strIngredient5}
-                </p>
-                <p>
-                  {meal.strMeasure6} {meal.strIngredient6}
-                </p>
-                <hr />
-                <h4>
-                  <span role="img" aria-label="globe"></span>Instructions
-                </h4>
-                <p>{meal.strInstructions}</p>
-                <hr />
-              </div>
-            </div>
-            <Link to="/" >
-            <Button>Go back</Button>
             </Link>
           </div>
         ) : (
@@ -101,4 +147,4 @@ const CocktailShow = () => {
   );
 };
 
-export default CocktailShow;
+export default MealShow;

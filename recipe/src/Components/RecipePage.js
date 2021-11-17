@@ -13,7 +13,7 @@ import { AiOutlineTags } from "react-icons/ai";
 import { GiEarthAfricaEurope } from "react-icons/gi";
 import { CgUserList } from "react-icons/cg";
 
-const CocktailCard = ({
+const RecipePage = ({
   idMeal,
   strMeal,
   strMealThumb,
@@ -23,28 +23,32 @@ const CocktailCard = ({
 }) => {
   return (
     <Link to={`/recipe/${idMeal}`}>
-      <Container>
-        <Card id="recipe-card-on-search">
-          <Image
-            size="medium"
-            src={strMealThumb}
-            wrapped
-            className="image-search-recipe"
-          />
-          <div className="recipe-name">{strMeal}</div>
+      {/* <Container> */}
+      <Card id="recipe-card-on-search">
+        <Image
+          // size="medium"
+          src={strMealThumb}
+          wrapped
+          className="image-search-recipe"
+        />
+        <div className="recipe-name">{strMeal}</div>
+        <div>
           <span>
             <GiEarthAfricaEurope />
             {strArea}
           </span>
-          <div className="recipe-instructions-card">
-            <CgUserList className="recipe-tag" />
-            {strInstructions.substring(0, 50) + "..."}
-          </div>
-          <Button className="recipe-button">Full recipe</Button>
-        </Card>
-      </Container>
+        </div>
+        <div className="recipe-instructions-card">
+          <CgUserList />
+          {strInstructions.substring(0, 60) + "..."}
+        </div>
+        <div id="recipe-button-container">
+          <Button id="special">Full recipe</Button>
+        </div>
+      </Card>
+      {/* </Container> */}
     </Link>
   );
 };
 
-export default CocktailCard;
+export default RecipePage;

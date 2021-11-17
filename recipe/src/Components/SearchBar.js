@@ -34,8 +34,8 @@ const SearchBar = () => {
   }, []);
 
   return (
-    <section className="input">
-      <>
+    <>
+      <section className="input">
         <Input
           icon
           type="text"
@@ -50,7 +50,10 @@ const SearchBar = () => {
           <input />
           <Icon name="search" className="search-icon" />
         </Input>
+        {/* </section> */}
+      </section>
 
+      {meal.length != 0 && (
         <section className="cocktail-index cocktail-page">
           <div className="container">
             <div id="recipe-section">
@@ -60,8 +63,8 @@ const SearchBar = () => {
             </div>
           </div>
         </section>
-      </>
-    </section>
+      )}
+    </>
   );
 };
 
