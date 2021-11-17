@@ -5,8 +5,7 @@ import React, { useState } from "react";
 // import { AiOutlineSearch } from "react-icons/ai";
 import logo from "../Assets/logo.png";
 import { Link } from "react-router-dom";
-
-import NavLinks from "./NavLinks";
+// import NavLinks from "./NavLinks";
 
 const Navbar = () => {
   const [status, setStatus] = useState("close");

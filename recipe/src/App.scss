@@ -4,6 +4,12 @@
   box-sizing: border-box;
 }
 
+#display {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
 main {
   padding: 5px;
   display: flex;
@@ -33,7 +39,8 @@ main {
     height: 3px;
     margin: 4px;
     border-radius: 6px;
-    transition: all ease 0.2s;
+    transition: all ease 0.1s;
+    
   }
 
   .open:nth-child(1) {
@@ -317,10 +324,7 @@ main {
       rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
   }
 
-  .recipe-img {
-    width: 500px;
-  }
-
+  // ! card on seached recipe
   .return-icon {
     width: 45px;
     height: 45px;
@@ -337,14 +341,56 @@ main {
     top: 22px;
     left: 22px;
   }
-
-  .recipe-container-rounded-border{
-    border: 1px solid red;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    padding: 10px;
-
+  .recipe-img {
+    z-index: -100;
   }
+  .recipe-container-rounded-border {
+    background: rgb(246, 248, 248);
+    margin-top: -65px;
+    border-top-left-radius: 45px;
+    border-top-right-radius: 45px;
+    padding: 32px;
+    height: 100%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+  .recipe-meal-search-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-top: 10px;
+  }
+
+  .recipe-meal-search-name {
+    font-size: 27px;
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: bolder;
+    color: rgba(78, 77, 77, 0.904);
+    // text-transform: uppercase;
+  }
+
+
+  .recipe-meal-search-paragraph {
+    color: rgb(138, 135, 135);
+    margin-bottom: 5px;
+    font-size: 17px;
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: 400;
+  }
+  .recipe-meal-search-instructions {
+    font-family: "Crimson Text", serif;
+    font-size: 18.5px;
+    margin-top: 20px;
+    color: rgba(78, 77, 77, 0.904);
+  }
+  .recipe-meal-search-ingredients {
+    color: rgba(78, 77, 77, 0.904);
+    font-family: "Crimson Text", serif;
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  // ! card on seached recipe
 
   // ! MODAL
   #modal-category-name {
