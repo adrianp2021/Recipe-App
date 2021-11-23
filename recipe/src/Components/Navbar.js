@@ -1,40 +1,27 @@
 import React, { useState } from "react";
-// import { CgMathPlus } from "react-icons/cg";
-// import { FiPlus } from "react-icons/fi";
-// import { RiCloseFill } from "react-icons/ri";
-// import { AiOutlineSearch } from "react-icons/ai";
 import logo from "../Assets/logo.png";
 import { Link } from "react-router-dom";
-// import NavLinks from "./NavLinks";
+import { GiCampCookingPot } from "react-icons/gi";
+import { AiOutlineHolder } from "react-icons/ai";
 
 const Navbar = () => {
   const [status, setStatus] = useState("close");
 
-  // const hamburgerIcon = (
-  //   <FiPlus
-  //     className="hamburger"
-  //     id="hamburger-icon-open"
-  //     onClick={() => setOpen(!open)}
-  //   />
-  // );
-  // const closeIcon = (
-  //   <RiCloseFill
-  //     className="hamburger"
-  //     id="hamburger-icon-close"
-  //     onClick={() => setOpen(!open)}
-  //   />
-  // );
-
-  // const closeMobileMenu = () => setOpen(false);
-
   return (
     <nav>
-      {/* <div> */}
-      {/* {open ? closeIcon : hamburgerIcon}
-        {open && <NavLinks isMobile={true} closeMobileMenu={closeMobileMenu} />} */}
-      {/* </div> */}
+      <Link to="/">
+        <div className="nav-logo-container">
+          <AiOutlineHolder className="nav-logo" />
+          <div>
+            <h5 id="orange">Home</h5>
+          </div>
+        </div>
+      </Link>
+      <div>
+        <GiCampCookingPot className="nav-logo2" />
+      </div>
 
-      <div
+      {/* <div
         className="burgerMenu-container"
         role="button"
         onClick={() => setStatus(status === "open" ? "close" : "open")}
@@ -42,7 +29,7 @@ const Navbar = () => {
         <i className={status} id="i" />
         <i className={status} id="i" />
         <i className={status} id="i" />
-      </div>
+      </div> */}
 
       <div id="flex">
         <Link to="/">

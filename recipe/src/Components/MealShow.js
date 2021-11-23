@@ -69,7 +69,8 @@ const MealShow = () => {
                     <div id="display">
                       <AiOutlineTags className="recipe-meal-search-paragraph" />
                       <p className="recipe-meal-search-paragraph">
-                        {meal[0].strTags.split(/[ ,]+/).join(', ')}
+                        {/* {meal[0].strTags.split(/[ ,]+/).join(", ")} */}
+                        {meal[0].strTags}
                       </p>
                     </div>
 

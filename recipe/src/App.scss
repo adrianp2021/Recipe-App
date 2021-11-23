@@ -15,16 +15,44 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+  // height: 100vh;
 }
 
 @media only all and (max-width: 600px) {
   nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     width: 100vw;
     height: 4.5em;
-    background-color: #29c9fa;
+    position: fixed;
+    background: rgb(240, 242, 243);
+    bottom: 0;
+  }
+
+  .nav-logo2{
+    font-size: 70px;
+    color:rgb(201, 199, 199);
+    margin-bottom: 40px;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    background: rgb(240, 242, 243);
+
+  }
+  .nav-logo-container{
+    // width: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .nav-logo{
+    font-size: 30px;
+    color:rgb(240, 152, 20);
+    font-weight: bolder;
+  }
+  #orange{
+    color:rgb(240, 152, 20);
   }
 
   .burgerMenu-container {
@@ -91,27 +119,23 @@ main {
   #root > div > section.input > div > input[type="text"] {
     border-radius: 5px;
     margin: 15px;
-    // padding:15px;
   }
 
   .meal-search-container {
     display: flex;
     flex-wrap: wrap;
-    // border: 1px solid red;
-    // height: 500px;
   }
   .meal-box {
-    // width: 10px;
     height: 300px;
-    // border: 1px solid purple;
     background-color: red;
   }
 
   .ui.card {
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    width: 90%;
+    width: 50%;
     padding: 5px;
   }
+
   #meal-name {
     font-family: "Poppins", sans-serif;
     font-size: 16px;
@@ -199,6 +223,12 @@ main {
     background-color: rgb(245, 249, 252);
     // margin-top: 30px;
   }
+#test-section{
+  width:50%;
+  height:50vh;
+  color:red;
+}
+
   #recipe-section::-webkit-scrollbar {
     display: none;
   }
@@ -347,9 +377,9 @@ main {
   .recipe-container-rounded-border {
     background: rgb(246, 248, 248);
     margin-top: -65px;
-    border-top-left-radius: 45px;
-    border-top-right-radius: 45px;
-    padding: 32px;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    padding: 30px;
     height: 100%;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   }
@@ -486,5 +516,14 @@ main {
     color: #f7410a;
     font-size: 20px;
     margin-left: 4px;
+  }
+
+  
+  .best-color{
+    color:red;
+  }
+
+  #test-section{
+    height: 100%;
   }
 }
